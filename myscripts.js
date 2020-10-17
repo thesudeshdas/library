@@ -136,10 +136,14 @@ function addBookToLibrary() {
             
             // calling showBooks function to show the new book added
             showBooks();
+            
+            // hide the form after adding
+            hideForm();
+        } else {
+            alert("Please enter the name of book and the autor")
         }
         
-        // hide the form after adding
-        hideForm();
+        
     }
 }
 
