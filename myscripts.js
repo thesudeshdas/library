@@ -15,7 +15,7 @@ function Book(id, title, author, pages, read = 'Read') {
 }
 
 // // Examples only
-var harryPotter = new Book(0, 'Harry Potter', 'J. K. Rowling', 298 );
+var harryPotter = new Book(0, 'Harry Potter', 'J. K. Rowling', 298, 'Unread');
 var dead = new Book(1, 'Dead Beautiful', 'Yvonne Woon', 400 );
 
 myLibrary.push(harryPotter);
@@ -72,10 +72,24 @@ function showBooks() {
             bookPages.textContent = 'Pages - ' + book.pages;
         }
     
-        // read status
-        let readStatus = document.createElement('div');
-        readStatus.classList.add('readstatus');
-        readStatus.textContent = book.read;
+        
+        
+        // read button
+        let readBtn = document.createElement('button');
+        readBtn.classList.add('read-button');
+        readBtn.textContent = book.read;
+        readBtn.onclick = function() {
+            if (book.read == 'Read') {
+                book.read = 'Unread';
+                readBtn.textContent = 'Unread';
+                console.log('read clicked')
+            }
+            else {
+                book.read = 'Read';
+                readBtn.textContent = 'Read';
+                console.log('Unread clicked')
+            }
+        }
         
         // delete button
         let deleteBook = document.createElement('button');
@@ -92,7 +106,7 @@ function showBooks() {
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
         card.appendChild(bookPages);
-        card.appendChild(readStatus);
+        card.appendChild(readBtn);
         card.appendChild(deleteBook);
         
         // appending the card to container
