@@ -1,10 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>Library</title>
   <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  
+  <!-- icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+  	<h1>Library</h1>
+  
+  <!-- container for cards -->
+  <div id="container" class="cards-container"></div>
+  
+  <!-- for for pop-up and getting new book to add -->
+  <div id="formPop" class="form">
+		<h1>Add a New Book</h1>
+    
+    <div class="title-form">
+      	<h2>Book Title</h2>
+      	<input type="text" placeholder="Enter the book title" class="input-field" id="titleInput" required>
+    </div>
+    
+    <div class="author-form">
+      	<h2>Book Author</h2>
+      	<input type="text" placeholder="Enter the book author" class="input-field" id="authorTitle" required>
+    </div>
+	
+	  <div class="pages-form">
+		    <h2>Pages</h2>
+		    <input type="number" placeholder="Enter pages" class="input-field" id="pagesInput">
+	  </div>
+	
+	  <div class="read-status-form">
+		    <h2>Reading Status</h2>
+		    <select name="read-status" id="readSelect">
+            <option value="Read" selected>Read</option>
+            <option value="Unread">Unread</option>
+		    </select>
+	  </div>
+	
+	  <i class="material-icons close-form" id="closeButton">close</i>
+	
+	  <button id="addThisBook" >Add This Book</button>
+  </div>
+  
+  <!-- button to add -->
+  <button id="addNewBook">NEW BOOK</button>
+  
+  
+  
+  
+  
+  
+  
   
     <script src="myscripts.js"></script>
 </body>
