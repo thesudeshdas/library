@@ -153,8 +153,6 @@ function addBookToLibrary() {
             
             // hide the form after adding
             hideForm();
-        } else {
-            alert("Please enter the name of book and the autor")
         }
         
         
