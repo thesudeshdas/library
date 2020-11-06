@@ -1,56 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Library</title>
-  <meta charset="UTF-8"/>
-  <link rel="stylesheet" href="styles.css">
+  	<title>Library</title>
+  	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="styles.css">
+	
+	<!-- meta for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  
+	<!-- fonts -->
+  	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@600&family=Roboto&display=swap" rel="stylesheet">
   
-  <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@600&family=Roboto&display=swap" rel="stylesheet">
-  
-  <!-- icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<!-- icons -->
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  	<h1>Library</h1>
+	<!-- background pic as a library -->
+	<div class="back-pic"></div>
+	
+	<!-- https://unsplash.com/photos/YLSwjSy7stw -->
+	
+	<h1>Dash's Library</h1>
+	
+	<!-- button to add -->
+	<button id="addNewBook">ADD NEW BOOK</button>
   
-  <!-- container for cards -->
-  <div id="container" class="cards-container"></div>
-  
-  <!-- for for pop-up and getting new book to add -->
-  <form id="formPop" class="form">
+  	<!-- container for cards -->
+	<div id="container" class="cards-container"></div>
+	  
+	
+	
+  	<!-- for for pop-up and getting new book to add -->
+  	<form id="formPop" class="form">
+		<!-- close button icon -->
+		<i class="material-icons md-36 close-form" id="closeButton">close</i>  
+		
 		<h1>Add a New Book</h1>
     
-    <div class="title-form">
-      	<h2>Book Title</h2>
-      	<input type="text" placeholder="Enter the book title" class="input-field" id="titleInput" required>
-    </div>
-    
-    <div class="author-form">
-      	<h2>Book Author</h2>
-      	<input type="text" placeholder="Enter the book author" class="input-field" id="authorTitle" required>
-    </div>
-	
-	  <div class="pages-form">
-		    <h2>Pages</h2>
-		    <input type="number" placeholder="Enter pages" class="input-field" id="pagesInput">
-	  </div>
-	
-	  <div class="read-status-form">
-		    <h2>Reading Status</h2>
-		    <select name="read-status" id="readSelect">
-            <option value="Read" selected>Read</option>
-            <option value="Unread">Unread</option>
-		    </select>
-	  </div>
-	
-	  <i class="material-icons close-form" id="closeButton">close</i>
-	
-	  <button id="addThisBook" >Add This Book</button>
-  </form>
+		<div class="form-item">
+			<h2>Book Title</h2>
+			<input type="text" placeholder="Enter the book title" class="input-field" id="titleInput" required>
+		</div>
+		
+		<div class="form-item">
+			<h2>Book Author</h2>
+			<input type="text" placeholder="Enter the book author" class="input-field" id="authorTitle" required>
+		</div>
+		
+		<div class="form-item">
+			<h2>Pages</h2>
+			<input type="number" placeholder="Enter pages" class="input-field" id="pagesInput">
+		</div>
+		
+		<div class="form-item">
+			<h2>Reading Status</h2>
+			<select name="read-status" id="readSelect">
+				<option value="Read" selected>Read</option>
+				<option value="Unread">Unread</option>
+			</select>
+		</div>
+		
+		
+		
+		<!-- add the book button inside the form -->
+		<button id="addThisBook">Add This Book</button>
+	</form>
   
-  <!-- button to add -->
-  <button id="addNewBook">NEW BOOK</button>
+  
   
   
   
