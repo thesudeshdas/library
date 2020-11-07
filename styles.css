@@ -204,6 +204,13 @@ h1 {
     margin: 0 10% 5% 10%;
 }
 
+.form-item select {
+    color: #24150c;
+    background: white;
+    border: none;
+    font-size: 1rem;
+}
+
 .form button {
     width: 50vw;
     height: 2.5rem;
@@ -211,4 +218,8 @@ h1 {
     margin: 5% auto 10% auto;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
+    background: #24150c;
+    color: rgb(255, 174, 87);
+    border: none;
+    border-radius: 5%;
 }
