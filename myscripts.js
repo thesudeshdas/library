@@ -28,24 +28,6 @@ myLibrary.push(dead);
 
 
 
-
-
-// delete button
-let deleteBook = document.createElement('button');
-deleteBook.textContent = "delete this book";
-
-
-
-
-
-
-
-
-
-
-
-
-
 // get the container to display
 const container = document.getElementById('container');
 
@@ -72,33 +54,54 @@ function showBooks() {
             bookPages.textContent = 'Pages - ' + book.pages;
         }
     
+        // read button and delete button container
+        let bookButtonContainer = document.createElement('div');
+        bookButtonContainer.classList.add('bookButtonContainer');
         
         
         // read button
         let readBtn = document.createElement('button');
-        readBtn.classList.add('read-button');
         readBtn.textContent = book.read;
+        
+        if (book.read == 'Read') {
+            readBtn.classList.add('read-button');
+        }
+        else {
+            readBtn.classList.add('unread-button');
+        }
+        
         readBtn.onclick = function() {
             if (book.read == 'Read') {
                 book.read = 'Unread';
                 readBtn.textContent = 'Unread';
+                readBtn.classList.remove('read-button');
+                readBtn.classList.add('unread-button');
                 console.log('read clicked')
             }
             else {
                 book.read = 'Read';
                 readBtn.textContent = 'Read';
+                readBtn.classList.remove('unread-button');
+                readBtn.classList.add('read-button');
                 console.log('Unread clicked')
             }
         }
         
         // delete button
-        let deleteBook = document.createElement('button');
-        deleteBook.classList.add("delete-book");
-        deleteBook.textContent = "delete this book";
+        let deleteBook = document.createElement('div');
+        let dltMarkup = `
+            <button class="delete-book">
+                <i class="material-icons md-36">delete</i>   
+            </button>
+        `
+        deleteBook.innerHTML = dltMarkup;
         deleteBook.onclick = function() {
             container.removeChild(card);
             myLibrary.splice(book.id, 1);
         }
+        
+        bookButtonContainer.appendChild(readBtn);
+        bookButtonContainer.appendChild(deleteBook);
         
         
         
@@ -106,8 +109,7 @@ function showBooks() {
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
         card.appendChild(bookPages);
-        card.appendChild(readBtn);
-        card.appendChild(deleteBook);
+        card.appendChild(bookButtonContainer);
         
         // appending the card to container
         container.appendChild(card);
