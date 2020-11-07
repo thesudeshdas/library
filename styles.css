@@ -41,6 +41,9 @@ h1 {
     margin: 5% auto 3% auto;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
+    border: solid #432818 1px;
+    border-radius: 5%;
+    background: rgb(255 211 164);
 }
 
 
