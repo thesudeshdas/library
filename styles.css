@@ -29,7 +29,7 @@ h1 {
     font-weight: bold;
     color: rgb(255, 174, 87);
     font-size: 5rem;
-    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    text-shadow: 2px 0 0 #24150c, -2px 0 0 #24150c, 0 2px 0 #24150c, 0 -2px 0 #24150c, 1px 1px #24150c, -1px -1px 0 #24150c, 1px -1px 0 #24150c, -1px 1px 0 #24150c;
     
 }
 
@@ -207,7 +207,7 @@ h1 {
 .form-item select {
     color: #24150c;
     background: white;
-    border: none;
+    border: solid 1px #24150c;
     font-size: 1rem;
 }
 
@@ -222,4 +222,13 @@ h1 {
     color: rgb(255, 174, 87);
     border: none;
     border-radius: 5%;
+}
+
+
+
+/* desjtop */
+@media only screen and (min-width: 768px) {
+    .form {
+        width: 50vw;
+    }
 }
