@@ -167,9 +167,10 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    
-    background: white;
     width: 90vw;
+    border: solid #24150c 3px;
+    background: rgb(255, 174, 87);
+    color: #24150c;
 }
 
 .close-form {
@@ -181,7 +182,7 @@ h1 {
 
 .form h1 {
     font-size: 2.8rem;
-    color: black;
+    color: #24150c;
     text-shadow: none;
 }
 
