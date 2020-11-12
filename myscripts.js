@@ -1,38 +1,29 @@
 let myLibrary = [];
 
-// get the button
+// get the button & form
 const addNewBookBtn = document.getElementById('addNewBook');
-// get the form
 const form = document.getElementById('formPop');
 
-// constructor for creating book object
-function Book(id, title, author, pages, read = 'Read') {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(id, title, author, pages, read = 'Read') {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 // // Examples only
-var harryPotter = new Book(0, 'Harry Potter', 'J. K. Rowling', 298, 'Unread');
-var dead = new Book(1, 'Dead Beautiful', 'Yvonne Woon', 400 );
-
-myLibrary.push(harryPotter);
-myLibrary.push(dead);
-
-
-
-
-
-
-
+var harryPotter1 = new Book(0, 'Harry Potter and The Philosopher\'s Stone', 'J. K. Rowling', 332);
+var deadBeautiful = new Book(1, 'Dead Beautiful', 'Yvonne Woon', 391);
+myLibrary.push(harryPotter1, deadBeautiful);
 
 // get the container to display
 const container = document.getElementById('container');
 
 // showing the books to user
-function showBooks() {
+const showBooks = () => {
     myLibrary.slice().reverse().forEach(book => {
         let card = document.createElement('div');
         card.classList.add('card');
@@ -49,26 +40,16 @@ function showBooks() {
         
         // pages 
         let bookPages = document.createElement('div');
-        bookPages.classList.add('pages');
-        if (book.pages != '') {
-            bookPages.textContent = 'Pages - ' + book.pages;
-        }
+        (book.pages != '') ? bookPages.textContent = 'Pages - ' + book.pages : null;
     
         // read button and delete button container
         let bookButtonContainer = document.createElement('div');
         bookButtonContainer.classList.add('bookButtonContainer');
         
-        
         // read button
         let readBtn = document.createElement('button');
         readBtn.textContent = book.read;
-        
-        if (book.read == 'Read') {
-            readBtn.classList.add('read-button');
-        }
-        else {
-            readBtn.classList.add('unread-button');
-        }
+        (book.read == 'Read') ? readBtn.classList.add('read-button') : readBtn.classList.add('unread-button');
         
         readBtn.onclick = function() {
             if (book.read == 'Read') {
@@ -103,8 +84,6 @@ function showBooks() {
         bookButtonContainer.appendChild(readBtn);
         bookButtonContainer.appendChild(deleteBook);
         
-        
-        
         // appending elements to cards such as name, author
         card.appendChild(bookTitle);
         card.appendChild(bookAuthor);
@@ -116,12 +95,6 @@ function showBooks() {
     })
 }
 
-
-
-
-
-
-// write function to add a book to myLibrary array
 function addBookToLibrary() {
     // show form as a pop up
     form.style.display = 'block';
@@ -146,22 +119,14 @@ function addBookToLibrary() {
             myLibrary.push(book);
             
             // clearing the view container - its required otherwise all books will be shown twice
-            while(container.firstChild) {
-                container.removeChild(container.lastChild);
-            }
+            while(container.firstChild) { container.removeChild(container.lastChild); }
             
-            // calling showBooks function to show the new book added
+            // calling showBooks function to show the new book added & hide the form
             showBooks();
-            
-            // hide the form after adding
             hideForm();
-        }
-        
-        
+        }   
     }
 }
-
-
 
 // hiding the form
 function hideForm() {
@@ -172,20 +137,8 @@ function hideForm() {
     document.getElementById('readSelect').value = 'Read';
 }
 
-
-
-
-
-
-
 // calling required functions
 showBooks();
-
-
-
-
-
-
 
 // give an event listener to the button
 addNewBookBtn.addEventListener('click', addBookToLibrary);

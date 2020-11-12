@@ -48,13 +48,6 @@ h1 {
     color: #24150c;
 }
 
-
-
-
-
-
-
-
 /* cards css */
 .cards-container {
     display: flex;
@@ -110,16 +103,12 @@ h1 {
     margin: 5% 5% 0 5%;
 }
 
-
-
-
 .bookButtonContainer {
     display: flex;
     position: absolute;
     bottom: 10%;
     width: 100%;
     height: 15%;
-    flex-direction: ;
 }
 
 .read-button {
@@ -148,18 +137,6 @@ h1 {
     border: 1px solid #24150c;;
     color: #24150c;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* form css */
 .form {
@@ -223,8 +200,6 @@ h1 {
     border: none;
     border-radius: 5%;
 }
-
-
 
 /* desjtop */
 @media only screen and (min-width: 768px) {
