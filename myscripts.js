@@ -40,6 +40,7 @@ const showBooks = () => {
         
         // pages 
         let bookPages = document.createElement('div');
+        bookPages.classList.add('pages');
         (book.pages != '') ? bookPages.textContent = 'Pages - ' + book.pages : null;
     
         // read button and delete button container
